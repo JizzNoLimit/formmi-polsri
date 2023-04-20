@@ -17,8 +17,28 @@ export default function Home() {
         <div className='main-container'>
           <SidebarClient />
           <div className='content-formmi'>
-            <div className='w-100'>
-              <h1>Hello world</h1>
+            <div className='content-formmi-box'>
+              <div className='content'>
+                <div className='d-flex justify-content-between align-items-center mx-4 mb-4'>
+                  <h3 className=''>Diskusi Teratas</h3>
+                  <button className='btn btn-primary'>Buat Diskusi</button>
+                </div>
+                <div className='d-flex justify-content-start mx-4 mb-3'>
+                  <div className="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" className="btn btn-tabs active">Populer</button>
+                    <button type="button" className="btn btn-tabs">Baru</button>
+                    <button type="button" className="btn btn-tabs">Aktif</button>
+                    <button type="button" className="btn btn-tabs">Belum terjawab</button>
+                  </div>
+                </div>
+                <div className='content-diskusi'>
+                  <div className='content-diskusi-card'></div>
+                  <div className='content-diskusi-card'></div>
+                </div>
+              </div>
+              <div className='sidebar-right'>
+                <h2>Hello right</h2>
+              </div>
             </div>
           </div>
         </div>
