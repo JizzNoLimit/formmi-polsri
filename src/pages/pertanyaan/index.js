@@ -2,7 +2,7 @@ import Navbars from "@/components/Navbars";
 import SidebarClient from "@/components/Sidebar";
 import Head from "next/head";
 
-export default function pertanyaan(params) {
+export default function index(params) {
     return(
         <>
             <Head>
