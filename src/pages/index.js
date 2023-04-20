@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import Navbars from '@/components/Navbars'
+import SidebarClient from '@/components/Sidebar'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -14,8 +13,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbars />
-      <main className='container'>
-        <h1>Hello world</h1>
+      <main className="main">
+        <div className='main-container'>
+          <SidebarClient />
+          <div className='content-formmi'>
+            <div className='w-100'>
+              <h1>Hello world</h1>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   )
