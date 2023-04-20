@@ -19,7 +19,7 @@ export default function index(params) {
                     <div className='content-formmi-box'>
                     <div className='content'>
                         <div className='d-flex justify-content-between align-items-center mx-4 mb-4'>
-                        <h3 className=''>Diskusi Teratas</h3>
+                        <h3 className=''>Semua Diskusi</h3>
                         <button className='btn btn-primary'>Buat Diskusi</button>
                         </div>
                         <div className='d-flex justify-content-start mx-4 mb-3'>

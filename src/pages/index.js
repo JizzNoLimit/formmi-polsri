@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbars from '@/components/Navbars'
 import SidebarClient from '@/components/Sidebar'
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -21,7 +22,9 @@ export default function Home() {
               <div className='content'>
                 <div className='d-flex justify-content-between align-items-center mx-4 mb-4'>
                   <h3 className=''>Diskusi Teratas</h3>
-                  <button className='btn btn-primary'>Buat Diskusi</button>
+                  <Link href='/diskusi/buat'>
+                    <button className='btn btn-primary'>Buat Diskusi</button>
+                  </Link>
                 </div>
                 <div className='d-flex justify-content-start mx-4 mb-3'>
                   <div className="btn-group" role="group" aria-label="Basic example">
