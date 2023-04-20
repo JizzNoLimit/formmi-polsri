@@ -7,6 +7,10 @@ button {
     border: none;
     background: none;
 }
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 !important;
+    font-weight: 500 !important;
+}
 
 a {
     text-decoration: none !important;
@@ -21,13 +25,33 @@ input:focus {
     outline: none;
 }
 
+/* Button */
+.btn-tabs {
+    font-size: .8rem !important;
+    border: 1px solid #b9b9b9 !important;
+}
+
+.btn-tabs.active {
+    background-color: #f2f2f2 !important;
+}
+/* Button */
+
+/* Margin */
+.ml-10 {
+    margin-left: 10px !important;
+}
+/* Akhir Margin */
+
 /* Navbar */
 .navbar-formmi {
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     width: 100%;
     height: 54px;
     background-color: #F8F9F9;
+    z-index: 100;
 }
 
 .container-formmi {
@@ -37,7 +61,7 @@ input:focus {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 10px;
 }
 
 .brand {
@@ -62,7 +86,7 @@ input:focus {
 .icon-search {
     position: absolute;
     left: 8px;
-    top: 25%;
+    top: 23%;
 
 }
 
@@ -113,8 +137,82 @@ input:focus {
 }
 
 .user-detail .level {
-    font-size: .8em;
+    font-size: .7em;
     line-height: 10px;
 }
 
 /* Akhir Navbar */
+
+/* Home */
+.main-container {
+    display: flex;
+}
+
+.content-formmi {
+    flex: 1;
+    padding: 20px 0px;
+    height: 1000px;
+}
+.content-formmi-box {
+    display: flex;
+}
+.content-formmi .content {
+    flex: 1;
+}
+.content-formmi .sidebar-right {
+    flex: 0 0 282px;
+}
+/* Akhir Home */
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 54px;
+    flex: 0 0 214px;
+    width: 100%;
+    height: calc(100vh - 54px);
+    padding: 20px 0px;
+    z-index: 0;
+    border-right: 1.3px solid #d8dada;
+}
+.sidebar-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 10px;
+}
+.sidebar-btn.active {
+    border-right: 3px solid orchid;
+    background-color: #f2f2f2;
+}
+.sidebar-text {
+    margin-left: 6px;
+    margin-top: 2px;
+}
+.text {
+    font-size: .9em;
+}
+/* Akhir Sidebar */
+
+/* Main */
+.main {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+/* Akhir Main */
+
+/* Card diskusi */
+.content-diskusi-card {
+    width: 100%;
+    height: 126px;
+    border-top: 1px solid #d8dada;
+}
+/* Akhir card diskusi */
