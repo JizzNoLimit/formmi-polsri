@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbars from '@/components/Navbars'
 import SidebarClient from '@/components/Sidebar'
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -21,7 +22,9 @@ export default function Home() {
               <div className='content'>
                 <div className='d-flex justify-content-between align-items-center mx-4 mb-4'>
                   <h3 className=''>Diskusi Teratas</h3>
-                  <button className='btn btn-primary'>Buat Diskusi</button>
+                  <Link href='/diskusi/buat'>
+                    <button className='btn btn-primary'>Buat Diskusi</button>
+                  </Link>
                 </div>
                 <div className='d-flex justify-content-start mx-4 mb-3'>
                   <div className="btn-group" role="group" aria-label="Basic example">
@@ -32,8 +35,81 @@ export default function Home() {
                   </div>
                 </div>
                 <div className='content-diskusi'>
-                  <div className='content-diskusi-card'></div>
-                  <div className='content-diskusi-card'></div>
+                  {/* Content Diskusi */}
+                  <div className='content-diskusi-card position-relative'>
+                    <div className='diskusi-content'>
+                      <div className='diskusi-content-detail'>
+                        <p className='py-1 px-2 mt-1'>10 suka</p>
+                        <p className='py-1 px-2 belum-terjawab'>3 jawaban</p>
+                        <p className='py-1 px-2'>10 dilihat</p>
+                      </div>
+                      <div className='diskusi-content-desk'>
+                        <div className='diskusi-content-desk-judul'>
+                          <Link href={`/diskusi`}>
+                            <p className='text-truncate-two mt-2'>Serenity BDD: Can we associate/link a tag on the feature file to the respective environment mentioned on serenity.conf?</p>
+                          </Link>
+                        </div>
+                        <div className='diskusi-content-desk-author'>
+                          <Link href={`/users`}>
+                            <div className='profile'>
+                              <div className='profile-img'></div>
+                              <div className='profile-username'>
+                                JizzNoLimit <span className='fw-semibold text-dark'>0</span>
+                              </div>
+                            </div>
+                          </Link>
+                          <div className='aktivitas'>
+                            Aktivitas: <span className='fw-semibold'>15 Menit</span> yang lalu
+                          </div>
+                          {/* .... */}
+                        </div>
+                        <div className='diskusi-content-desk-tags'>
+                          <span className='topik-tags'>Javascript</span>
+                          <span className='topik-tags'>Nextjs</span>
+                          <span className='topik-tags'>Mysql</span>
+                          <span className='topik-tags'>Axios</span>
+                          <span className='topik-tags'>Prisma</span>
+                          <span className='topik-tags'>React</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='content-diskusi-card position-relative'>
+                    <div className='diskusi-content'>
+                      <div className='diskusi-content-detail'>
+                        <p className='py-1 px-2 mt-1'>12 suka</p>
+                        <p className='py-1 px-2 terjawab'>1 jawaban</p>
+                        <p className='py-1 px-2'>14 dilihat</p>
+                      </div>
+                      <div className='diskusi-content-desk'>
+                        <div className='diskusi-content-desk-judul'>
+                          <Link href={`/diskusi`}>
+                            <p className='text-truncate-two mt-2'>Serenity BDD: Can we associate/link a tag on the feature file to the</p>
+                          </Link>
+                        </div>
+                        <div className='diskusi-content-desk-author'>
+                          <Link href={`/users`}>
+                            <div className='profile'>
+                              <div className='profile-img'></div>
+                              <div className='profile-username'>
+                                JizzNoLimit <span className='fw-semibold text-dark'>0</span>
+                              </div>
+                            </div>
+                          </Link>
+                          <div className='aktivitas'>
+                            Aktivitas: <span className='fw-semibold'>23 Menit</span> yang lalu
+                          </div>
+                          {/* .... */}
+                        </div>
+                        <div className='diskusi-content-desk-tags'>
+                          <span className='topik-tags'>Go</span>
+                          <span className='topik-tags'>http</span>
+                          <span className='topik-tags'>Mysql</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Content Diskusi */}
                 </div>
               </div>
               <div className='sidebar-right'>
