@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+* {
+    box-sizing: border-box !important;
+}
+
+html, body {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
 body {
     font-family: 'Inter', sans-serif !important;
 }
@@ -76,6 +85,21 @@ input:focus {
     margin-right: 6px;
 }
 /* Akhir Topik Tags */
+
+/* Utiliti */
+.link-ancor {
+    color: #0D6EFD;
+}
+.link-ancor:hover {
+    text-decoration: underline;
+}
+.w-screen {
+    width: calc(100vw - 0.1px) !important;
+}
+.h-screen {
+    height: calc(100vh - 1px) !important;
+}
+/* Akhir Utiliti */
 
 /* Button */
 .btn-tabs {
@@ -325,3 +349,68 @@ input:focus {
     align-self: center;
     margin-left: 10px;
 }
+
+/* Login */
+.lupa-password {
+    font-size: .7em;
+    color: #0D6EFD;
+}
+.form-label {
+    font-size: .9em;
+    color: #1f2328;
+}
+.form-login {
+    font-size: .8em;
+    padding: 6px 12px 3px 12px;
+    color: #1f2328;
+    border-radius: 6px;
+    border: 1.3px solid #d0d7de;
+    width: 100%;
+}
+.form-login:focus {
+    outline: 1.8px solid #0D6EFD;
+} 
+.login-formmi {
+    display: flex;
+    justify-content: center;
+}
+.login-formmi-container {
+    display: flex;
+    flex-direction: column;
+    width: 308px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.login-formmi-form {
+    width: 100%;
+    padding: 16px 16px 20px 16px;
+    border: 1px solid #d0d7de;
+    background-color: #F6F8FA;
+    border-radius: 8px;
+}
+.btn-login {
+    font-size: .9em !important;
+    width: 100% !important;
+    font-weight: 600 !important;
+}
+.buat-akun {
+    width: 100%;
+    font-size: .9em;
+    padding: 20px 16px;
+    margin-top: 16px;
+    border: 1px solid #d0d7de;
+    background-color: #F6F8FA;
+    border-radius: 8px;
+    text-align: center;
+}
+.login-formmi-title {
+    font-size: 1.4em;
+    text-align: center;
+    margin: 16px 0;
+}
+.tambahan-aja {
+    width: 100%;
+    height: 80px;
+}
+/* Akhir Login */
