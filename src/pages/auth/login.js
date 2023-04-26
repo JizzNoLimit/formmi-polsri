@@ -34,7 +34,7 @@ export default function Login() {
                             </form>
                         </div>
                         <div className="buat-akun">
-                            Baru di Formmi? <a href="/auth/register"><span className="link-ancor">Buat akun sekarang</span></a>
+                            Baru di Formmi? <a href="/auth/registrasi"><span className="link-ancor">Buat akun sekarang</span></a>
                         </div>
                         <div className="tambahan-aja"></div>
                 </div>
