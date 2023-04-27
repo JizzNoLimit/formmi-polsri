@@ -1,4 +1,4 @@
-Ini adalah projek laporan akhir tahun 2023 jurusan Manajemen Informatika [Politeknik Negeri Sriwijaya](https://polsri.ac.id)
+Ini adalah projek laporan akhir Muhammad Ajiz Alfarizi tahun 2023 jurusan Manajemen Informatika [Politeknik Negeri Sriwijaya](https://polsri.ac.id)
 
 ## FORMMI POLSRI
 
