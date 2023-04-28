@@ -32,8 +32,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-misc/**/migrations/
-databases/**/migrations/
+/prisma/migrations/
 experimental/**/*.db
 dev.db
 *.env*
