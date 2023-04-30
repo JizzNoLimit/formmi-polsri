@@ -16,30 +16,28 @@ enum Role {
   USER
 }
 
-model User {
-  id       String @id @db.VarChar(12)
+model user {
+  id       String @id @db.VarChar(14)
   username String @db.VarChar(15)
   email    String @unique @db.VarChar(150)
   passowrd String @db.VarChar(150)
   role     Role   @default(USER)
 
-  profile          Profile?
-  diskusi          Diskusi[]
-  komentar         Komentar[]
-  like             Like[]
-  komentar_balasan Komentar_balasan[]
+  profile  profile?
+  diskusi  diskusi[]
+  komentar komentar[]
+  reply    reply[]
+  suka     suka[]
 
   @@index([username])
 }
 
-model Profile {
-  id           Int     @id @default(autoincrement())
-  nama         String  @db.VarChar(150)
-  nim          String  @db.VarChar(12)
-  tempat_lahir String? @db.VarChar(150)
-  tgl_lahir    BigInt?
-  lokasi       String? @db.VarChar(150)
-  organisasi   String? @db.VarChar(150)
+model profile {
+  id        Int     @id @default(autoincrement())
+  nama      String  @db.VarChar(150)
+  nim       String  @db.VarChar(12)
+  tgl_lahir BigInt?
+  lokasi    String? @db.VarChar(150)
 
   angkatan  Int?
   bio       String?  @db.Text
@@ -47,62 +45,69 @@ model Profile {
   create_at DateTime @default(now())
   update_at DateTime @updatedAt
 
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @unique
+  user   user   @relation(fields: [userId], references: [id])
+  userId String @unique @db.VarChar(14)
 
   @@index([nama])
 }
 
-model Diskusi {
+model diskusi {
   id    Int    @id @default(autoincrement())
-  judul String @db.Text
+  judul String @db.VarChar(250)
   desk  String @db.Text
 
-  tags     Tags[]
-  komentar Komentar[]
+  user     user           @relation(fields: [userId], references: [id])
+  userId   String         @unique @db.VarChar(14)
+  tags     tags_diskusi[]
+  komentar komentar[]
 
-  author   User   @relation(fields: [authorId], references: [id])
-  authorId String @unique
+  @@index([judul])
 }
 
-model Tags {
-  id   Int    @id @default(autoincrement())
-  name String @db.VarChar(150)
-  desk String @db.Text
-
-  diskusi   Diskusi @relation(fields: [diskusiId], references: [id])
-  diskusiId Int     @unique
+model tags {
+  id      Int            @id @default(autoincrement())
+  name    String         @db.VarChar(150)
+  desk    String         @db.Text
+  diskusi tags_diskusi[]
 }
 
-model Komentar {
+model tags_diskusi {
+  diksusi   diskusi @relation(fields: [diskusiId], references: [id])
+  diskusiId Int
+  tags      tags    @relation(fields: [tagsId], references: [id])
+  tagsId    Int
+
+  @@id([diskusiId, tagsId])
+}
+
+model komentar {
   id     Int    @id @default(autoincrement())
   konten String @db.Text
 
-  user      User    @relation(fields: [userId], references: [id])
-  userId    String  @unique
-  diskusi   Diskusi @relation(fields: [diskusiId], references: [id])
+  user      user    @relation(fields: [userId], references: [id])
+  userId    String  @unique @db.VarChar(14)
+  diksusi   diskusi @relation(fields: [diskusiId], references: [id])
   diskusiId Int     @unique
-
-  like             Like[]
-  komentar_balasan Komentar_balasan[]
+  reply     reply[]
+  suka      suka[]
 }
 
-model Komentar_balasan {
+model reply {
   id      Int    @id @default(autoincrement())
   kontent String @db.Text
 
-  user       User     @relation(fields: [userId], references: [id])
-  userId     String   @unique
-  komentar   Komentar @relation(fields: [komentarId], references: [id])
+  komentar   komentar @relation(fields: [komentarId], references: [id])
   komentarId Int      @unique
+  user       user     @relation(fields: [userId], references: [id])
+  userId     String   @unique @db.VarChar(14)
 }
 
-model Like {
+model suka {
   id     Int @id @default(autoincrement())
   jumlah Int
 
-  user       User     @relation(fields: [userId], references: [id])
-  userId     String   @unique
-  komentar   Komentar @relation(fields: [komentarId], references: [id])
+  user       user     @relation(fields: [userId], references: [id])
+  userId     String   @unique @db.VarChar(14)
+  komentar   komentar @relation(fields: [komentarId], references: [id])
   komentarId Int      @unique
 }
