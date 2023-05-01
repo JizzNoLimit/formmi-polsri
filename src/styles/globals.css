@@ -34,6 +34,10 @@ input:focus {
     outline: none;
 }
 
+.content-dumy {
+    width: 100%;
+}
+
 /* Terjawab & Belum terjawab */
 .terjawab {
     position: relative;
@@ -128,6 +132,15 @@ input:focus {
     height: 54px;
     background-color: #F8F9F9;
     z-index: 100;
+}
+
+.container-admin-formmi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;   
 }
 
 .container-formmi {
@@ -413,3 +426,10 @@ input:focus {
     height: 80px;
 }
 /* Akhir Login */
+
+/* CSS Style Admin Dashboard */
+.dashboard-content {
+    width: 100%;
+}
+
+/* Akhir CSS Style Admin Dashboard */
